@@ -1,1 +1,1 @@
-# conf
+https://efekta.github.io/conf/index.html
