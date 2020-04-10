@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 body {
+    position: relative;
     height: 100%;
     line-height: 1.4;
     font-size: 16px;
@@ -21,21 +22,71 @@ a {
 a:hover {
     text-decoration: none;
 }
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 2;
+}
 .wrapper {
     position: relative;
     height: 100vh;
     overflow: hidden;
 }
 .video {
-    height: calc(100vh - 30vh);
+    position: relative;
     background: #000;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
+    height: 100%;
+}
+.video-list {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    background: transparent;
+    width: 150px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    opacity: 1;
+    transition: all .5s ease-in-out;
+    z-index: 3;
+}
+.video-list.hide {
+    opacity: 0;
+}
+.video-list__item {
+    margin-left: 15px;
+}
+.video-list__link {
+    display: inline-block;
+    color: #fff;
+    font-size: 28px;
+}
+.video-list-ico {
+
 }
 .chat {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2000px;
+    width: 100%;
     height: 30vh;
     overflow-y: scroll;
-    background: green;
+    background: transparent;
     padding: 20px;
+    transition: all .5s ease-in-out;
+}
+.chat.open {
+    bottom: 0;
 }
 .chat-list__item {
     margin-bottom: 20px;
