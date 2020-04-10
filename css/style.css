@@ -84,6 +84,7 @@ a:hover {
     background: transparent;
     padding: 20px;
     transition: all .5s ease-in-out;
+    z-index: 2;
 }
 .chat.open {
     bottom: 0;
